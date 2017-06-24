@@ -1,0 +1,16 @@
+{
+  "name": "firstinthecloud.com",
+  "version": "1.0",
+  "description": "firstinthecloud.com blog using pub-server",
+  "repository": "git://github.com/jldec/firstinthecloud.git",
+  "main": "pub-config.js",
+  "dependencies": {
+      "pub-theme-pubblog": "^1.2.2"
+  },
+  "scripts": {
+    "develop": "pub",
+    "generate": "pub -O",
+    "static": "pub -S out"
+  },
+  "license": "CC BY 4.0"
+}
