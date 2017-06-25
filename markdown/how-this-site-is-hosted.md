@@ -25,9 +25,9 @@ The domain name was registered with the registrar at AWS. _This was the only par
 
 ![Route 53 Domain](/images/route-53.png)
 
-## Cloudflare
+## [Cloudflare](https://www.cloudflare.com)
 
-[Cloudflare](https://www.cloudflare.com) manages the DNS name servers, SSL certs, [CNAME flattening](https://blog.cloudflare.com/introducing-cname-flattening-rfc-compliant-cnames-at-a-domains-root/), redirection from HTTP to HTTPS, and also serves as an additional CDN layer in front of GitHub Pages.
+Cloudflare manages the DNS name servers, SSL, [CNAME flattening](https://blog.cloudflare.com/introducing-cname-flattening-rfc-compliant-cnames-at-a-domains-root/), redirection from HTTP to HTTPS, and also serves as an additional CDN layer in front of GitHub Pages.
 
 ![Cloudflare DNS](/images/cloudflare-dns.png)
 ![Cloudflare Pagerule](/images/cloudflare-pagerule.png)
