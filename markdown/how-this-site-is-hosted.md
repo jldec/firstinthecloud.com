@@ -10,7 +10,7 @@ Welcome to https://firstinthecloud.com, a blog about software in the _!cloud_.
 
 ## [GitHub Pages](https://help.github.com/articles/what-is-github-pages/) and [pub-server](https://github.com/jldec/pub-server)
 
-A [git repo](https://github.com/jldec/firstinthecloud.com) is used to manage content in markdown files. Generating HTML into the `/docs` folder in the same repo using makes for an easy publishing publishing workflow.
+A [git repo](https://github.com/jldec/firstinthecloud.com) is used to manage content in markdown files. Generating HTML into the `/docs` folder in the same repo using makes for an easy publishing workflow.
 
 1. Write and preview locally using `pub`.
 2. When ready to publish, generate the HTML with `pub -O`.
