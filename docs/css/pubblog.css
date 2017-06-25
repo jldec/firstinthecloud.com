@@ -75,6 +75,16 @@ header a:hover, #navicon:hover { color:#777; }
   margin-top: 0;
 }
 
+#content code {
+  background-color: #f0f0f0;
+  padding: 0 3px;
+}
+
+#content img {
+  max-width:100%;
+  border: 1px solid #777;
+}
+
 a.permalink {
   float:right; display:inline-block; font:normal normal normal 14px FontAwesome;
   line-height:28px; height:28px; text-align:center; width:28px; color:#bbb;

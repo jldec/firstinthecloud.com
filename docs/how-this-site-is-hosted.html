@@ -51,10 +51,19 @@
 <div >
 <div data-render-html="/how-this-site-is-hosted"><h2 id="1st-post">1st post</h2>
 <p>Welcome to <a href="https://firstinthecloud.com" target="_blank">https://firstinthecloud.com</a>, a blog about software in the <span class="fa">&#xf0c2;</span>.</p>
-<p>The content for this site is served by <a href="https://help.github.com/articles/what-is-github-pages/" target="_blank">GitHub Pages</a>. A single <a href="https://github.com/jldec/firstinthecloud.com" target="_blank">git repo</a> contains the markdown and the rendered HTML in a <code>/docs</code> folder.</p>
-<p>Conversion from markdown to HTML is performed using the  <a href="https://jldec.github.io/pub-doc/" target="_blank">pub-server</a> static site generator. Commits are done manually from my laptop using the git cli.</p>
-<p>The <em>firstinthecloud.com</em> domain name was registered with the registrar at <a href="https://aws.amazon.com/route53/" target="_blank">AWS Route 53</a>. This was the only part of the site which required any payment.</p>
+<p>This site is served by <a href="https://help.github.com/articles/what-is-github-pages/" target="_blank">GitHub Pages</a>.</p>
+<p>A <a href="https://github.com/jldec/firstinthecloud.com" target="_blank">git repo</a> is used to manage content in markdown files. Generating HTML into the <code>/docs</code> folder in the same repo using <a href="https://github.com/jldec/pub-server" target="_blank">pub-server</a>, makes for an easy publishing publishing workflow.</p>
+<ol>
+<li>Write and preview locally using <code>pub</code>.</li>
+<li>When ready to publish, generate the HTML with <code>pub -O</code>.</li>
+<li><code>git commit</code> and <code>git push</code> to make the changes live.</li>
+</ol>
+<p>Here are the GitHub Pages settings:<br><img src="./images/gh-pages-settings.png" alt="Github Pages Settings"></p>
+<p>The <strong><em>firstinthecloud.com</em></strong> domain name was registered with the registrar at <a href="https://aws.amazon.com/route53/" target="_blank">AWS Route 53</a>.<br><em>This was the only part of the site which required any payment.</em></p>
+<p><img src="./images/route-53.png" alt="Route 53 Domain"></p>
 <p><a href="https://www.cloudflare.com" target="_blank">CloudFlare</a> manages the DNS name servers, SSL certs, <a href="https://blog.cloudflare.com/introducing-cname-flattening-rfc-compliant-cnames-at-a-domains-root/" target="_blank">CNAME flattening</a>, redirection from HTTP to HTTPS, and also serves as an additional CDN layer in front of GitHub Pages.</p>
+<p><img src="./images/cloudflare-dns.png" alt="Cloudflare DNS">
+<img src="./images/cloudflare-pagerule.png" alt="Cloudflare Pagerule"></p>
 <blockquote>
 <p><span class="fa fa-2x">&#xf21c;</span></p>
 </blockquote>
