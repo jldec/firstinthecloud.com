@@ -4,7 +4,7 @@ image: images/boot1.jpg
 date: 2017-06-28
 template: post
 
-# WTF is @Bean
+# What is a Spring Bean really?
 
 Today I was feeling rather lost in my attempts to understand what is going on inside a Spring Boot application.
 
@@ -62,3 +62,10 @@ By including a starter in the dependencies of your Boot App, you are telling Spr
 
 > Easy Peasy Lemon Squeezy  
 > _!lemon-o_
+
+---
+
+
+---- #excerpt ----
+
+Spring Beans are magic - but what's behind them and why are they called beans? 
