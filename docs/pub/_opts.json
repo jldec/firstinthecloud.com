@@ -9,12 +9,13 @@
   "basedir": "/Users/jleschner/pub/firstinthecloud",
   "pkgJson": {
     "name": "firstinthecloud.com",
-    "version": "1.0",
+    "version": "1.0.0",
     "description": "firstinthecloud.com blog using pub-server",
     "repository": "git://github.com/jldec/firstinthecloud.git",
     "main": "pub-config.js",
     "dependencies": {
-      "pub-theme-pubblog": "^1.2.2"
+      "pub-theme-pubblog": "^1.2.2",
+      "pub-pkg-highlight": "^0.2.4"
     },
     "scripts": {
       "develop": "pub",
@@ -41,6 +42,10 @@
         {
           "path": "/how-this-site-is-hosted.md",
           "text": "---- /how-this-site-is-hosted ----\ntitle: How this site is hosted\nimage:\ndate: 2017-06-24\ntemplate: post\n\n# 1st post\n\nWelcome to https://firstinthecloud.com, a blog about software in the _!cloud_.\n\n## [GitHub Pages](https://help.github.com/articles/what-is-github-pages/) and [pub-server](https://github.com/jldec/pub-server)\n\nA [git repo](https://github.com/jldec/firstinthecloud.com) is used to manage content in markdown files. Generating HTML into the `/docs` folder in the same repo makes for an easy publishing workflow.\n\n1. Write and preview locally using `pub`.\n2. When ready to publish, generate the HTML with `pub -O`.\n3. `git commit` and `git push` to make the changes live.\n\nHere are the GitHub Pages settings:  \n![Github Pages Settings](/images/gh-pages-settings.png)\n\n## [AWS Route 53](https://aws.amazon.com/route53/)\n\nThe domain name was registered with the registrar at AWS. _This was the only part of the site which required any payment._\n\n![Route 53 Domain](/images/route-53.png)\n\n## [Cloudflare](https://www.cloudflare.com)\n\nCloudflare manages the DNS name servers, SSL, [CNAME flattening](https://blog.cloudflare.com/introducing-cname-flattening-rfc-compliant-cnames-at-a-domains-root/), redirection from HTTP to HTTPS, and also serves as an additional CDN layer in front of GitHub Pages.\n\n![Cloudflare DNS](/images/cloudflare-dns.png)\n![Cloudflare Pagerule](/images/cloudflare-pagerule.png)\n\n> _!motorcycle 2x_\n"
+        },
+        {
+          "path": "/spring-boot-101.md",
+          "text": "---- /spring-boot-101 ----\ntitle: Spring Boot 101\nimage: images/boot1.jpg\ndate: 2017-06-28\ntemplate: post\n\n# WTF is @Bean\n\nToday I was feeling rather lost in my attempts to understand what is going on inside a Spring Boot application.\n\nBeing new to Spring, I had spent a fair bit of time googling and reading, but most of the things i came across simply assume prior knowledge when it comes to fundamental concepts like 'Beans'.\n\nMark Fisher, my friend and colleague here on the Spring team at Pivotal, came to my rescue and offered to explain. In exchange, I promised to write about it.\n\nThe result is this blog post and https://github.com/markfisher/spring-boot-hello-world.\n\n## In the beginning there was XML\n\nSpring started by providing a much-simpler-than-J2EE, XML-based way to configure the main classes that your Java application depended on.\n\nSimply instantiating everything with `new` in Java was not ideal because this meant that you had to hardwire all those dependencies into your code, so you couldn't easily use say one database for local testing and a different database for CI or production.  \n\nInstead of writing your own factories which abstracted the creation of things like database connections, you could use Spring and provide the details of all those things in XML.\n\nSpring would read some environment-specific XML at startup and create instances of those classes based on what was in the XML.\n\nAnd those instances were... _**Beans**_, something like this:\n\n![ApplicationContext.getBean()](/images/boot1b.jpg)\n\n## Now there are @Annotations\n\nFast forward a few years and the XML has been replaced by Java code annotated as `@Configuration` and `@ConfigurationProperties`.\n\n```java\n@Configuration\n@EnableConfigurationProperties(GreeterProperties.class)\npublic class GreeterAutoConfiguration {\n\n\t@Bean\n\tpublic Greeter greeter(GreeterProperties properties) {\n\t\treturn new Greeter(properties.getGreeting());\n\t}\n}\n```\n\n\nNotice that the factory method is annotated as `@Bean`.\n\nIf the configuration class is included in the `META-INF/spring.factories` of a dependent jar, then a Spring Boot application will automatically call the factory method to create a singleton instance of that class on startup.\n\n> This is the magic  \n> and those instances are still called **Beans**\n\n## What about [Spring Initializr](https://start.spring.io/) and all those starters?\n\nNow that [_configuration scanning_](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using-boot-configuration-classes) is no longer such a mystery, the role of Spring Boot Starters is easier to understand.\n\nBy including a starter in the dependencies of your Boot App, you are telling Spring to scan for configuration classes inside that starter, which results in the automatic creation of the **Beans** for that starter.\n\n![Initializr injection](/images/boot4.jpg)\n\n> Easy Peasy Lemon Squeezy  \n> _!lemon-o_\n"
         }
       ]
     },
@@ -317,6 +322,57 @@
       }
     },
     {
+      "path": "/Users/jleschner/pub/firstinthecloud/node_modules/pub-pkg-highlight/css/highlight-github-0.2.3.css",
+      "route": "/css",
+      "inject": true,
+      "maxAge": "30d",
+      "_pkg": "pub-pkg-highlight",
+      "watch": false,
+      "depth": 5,
+      "includeBinaries": true,
+      "sendOpts": {
+        "maxAge": "30d",
+        "dotfiles": "ignore",
+        "index": false,
+        "extensions": false,
+        "root": "/Users/jleschner/pub/firstinthecloud/node_modules/pub-pkg-highlight/css"
+      }
+    },
+    {
+      "path": "/Users/jleschner/pub/firstinthecloud/node_modules/pub-pkg-highlight/js/highlight-0.2.3.min.js",
+      "route": "/js",
+      "inject": true,
+      "maxAge": "30d",
+      "_pkg": "pub-pkg-highlight",
+      "watch": false,
+      "depth": 5,
+      "includeBinaries": true,
+      "sendOpts": {
+        "maxAge": "30d",
+        "dotfiles": "ignore",
+        "index": false,
+        "extensions": false,
+        "root": "/Users/jleschner/pub/firstinthecloud/node_modules/pub-pkg-highlight/js"
+      }
+    },
+    {
+      "path": "/Users/jleschner/pub/firstinthecloud/node_modules/pub-pkg-highlight/js/pub-pkg-highlight-0.2.3.js",
+      "route": "/js",
+      "inject": true,
+      "maxAge": "30d",
+      "_pkg": "pub-pkg-highlight",
+      "watch": false,
+      "depth": 5,
+      "includeBinaries": true,
+      "sendOpts": {
+        "maxAge": "30d",
+        "dotfiles": "ignore",
+        "index": false,
+        "extensions": false,
+        "root": "/Users/jleschner/pub/firstinthecloud/node_modules/pub-pkg-highlight/js"
+      }
+    },
+    {
       "path": "/Users/jleschner/pub/server/node_modules/pub-pkg-editor/static/css",
       "route": "/pub/css",
       "_pkg": "pub-pkg-editor",
@@ -396,11 +452,20 @@
     },
     {
       "path": "/css/font-awesome.css"
+    },
+    {
+      "path": "/css/highlight-github-0.2.3.css"
     }
   ],
   "injectJs": [
     {
       "path": "/js/jquery-1.11.3.min.js"
+    },
+    {
+      "path": "/js/highlight-0.2.3.min.js"
+    },
+    {
+      "path": "/js/pub-pkg-highlight-0.2.3.js"
     },
     {
       "path": "/pub/pub-ux.js"
@@ -543,6 +608,93 @@
       },
       "pkgName": "pub-pkg-seo",
       "dir": "/Users/jleschner/pub/server/node_modules/pub-pkg-seo"
+    },
+    {
+      "path": "pub-pkg-highlight",
+      "pkgJson": {
+        "_args": [
+          [
+            {
+              "raw": "pub-pkg-highlight@^0.2.4",
+              "scope": null,
+              "escapedName": "pub-pkg-highlight",
+              "name": "pub-pkg-highlight",
+              "rawSpec": "^0.2.4",
+              "spec": ">=0.2.4 <0.3.0",
+              "type": "range"
+            },
+            "/Users/jleschner/pub/firstinthecloud"
+          ]
+        ],
+        "_from": "pub-pkg-highlight@>=0.2.4 <0.3.0",
+        "_id": "pub-pkg-highlight@0.2.4",
+        "_inCache": true,
+        "_location": "/pub-pkg-highlight",
+        "_nodeVersion": "2.3.4",
+        "_npmUser": {
+          "name": "jldec",
+          "email": "jldec@ciaosoft.com"
+        },
+        "_npmVersion": "2.12.1",
+        "_phantomChildren": {},
+        "_requested": {
+          "raw": "pub-pkg-highlight@^0.2.4",
+          "scope": null,
+          "escapedName": "pub-pkg-highlight",
+          "name": "pub-pkg-highlight",
+          "rawSpec": "^0.2.4",
+          "spec": ">=0.2.4 <0.3.0",
+          "type": "range"
+        },
+        "_requiredBy": [
+          "/"
+        ],
+        "_resolved": "https://registry.npmjs.org/pub-pkg-highlight/-/pub-pkg-highlight-0.2.4.tgz",
+        "_shasum": "4e68492ce6533d3afaa957e7aee12fd4af69fe78",
+        "_shrinkwrap": null,
+        "_spec": "pub-pkg-highlight@^0.2.4",
+        "_where": "/Users/jleschner/pub/firstinthecloud",
+        "author": {
+          "name": "jurgen leschner"
+        },
+        "bugs": {
+          "url": "https://github.com/jldec/pub-pkg-highlight/issues"
+        },
+        "dependencies": {},
+        "description": "pub-server package for injecting highlight.js",
+        "devDependencies": {},
+        "directories": {},
+        "dist": {
+          "shasum": "4e68492ce6533d3afaa957e7aee12fd4af69fe78",
+          "tarball": "https://registry.npmjs.org/pub-pkg-highlight/-/pub-pkg-highlight-0.2.4.tgz"
+        },
+        "gitHead": "4b555a4f5fed8f1d12e92ff8dbc53ed7beb3836c",
+        "homepage": "https://github.com/jldec/pub-pkg-highlight#readme",
+        "keywords": [
+          "publish",
+          "syntax",
+          "highlight"
+        ],
+        "license": "MIT",
+        "main": "pub-config.js",
+        "maintainers": [
+          {
+            "name": "jldec",
+            "email": "jldec@ciaosoft.com"
+          }
+        ],
+        "name": "pub-pkg-highlight",
+        "optionalDependencies": {},
+        "readme": "ERROR: No README data found!",
+        "repository": {
+          "type": "git",
+          "url": "git://github.com/jldec/pub-pkg-highlight.git"
+        },
+        "scripts": {},
+        "version": "0.2.4"
+      },
+      "pkgName": "pub-pkg-highlight",
+      "dir": "/Users/jleschner/pub/firstinthecloud/node_modules/pub-pkg-highlight"
     },
     {
       "path": "pub-pkg-editor",
