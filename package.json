@@ -1,11 +1,12 @@
 {
   "name": "firstinthecloud.com",
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "firstinthecloud.com blog using pub-server",
   "repository": "git://github.com/jldec/firstinthecloud.git",
   "main": "pub-config.js",
   "dependencies": {
-      "pub-theme-pubblog": "^1.2.2"
+      "pub-theme-pubblog": "^1.2.2",
+      "pub-pkg-highlight": "^0.2.4"
   },
   "scripts": {
     "develop": "pub",

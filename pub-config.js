@@ -10,7 +10,8 @@ var opts = module.exports = {
     'pub-theme-pubblog',
     'pub-pkg-font-open-sans',
     'pub-pkg-font-awesome',
-    'pub-pkg-seo'
+    'pub-pkg-seo',
+    'pub-pkg-highlight'
   ],
 
   github: 'https://github.com/jldec/firstinthecloud.com',
