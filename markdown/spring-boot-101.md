@@ -58,9 +58,9 @@ Now that [_configuration scanning_](http://docs.spring.io/spring-boot/docs/curre
 
 By including a starter in the dependencies of your Boot App, you are telling Spring to scan for configuration classes inside that starter, which results in the automatic creation of the **Beans** for that starter.
 
-![Initializr injection](/images/boot4.jpg)
+![Initializr injection](/images/boot5.jpg)
 
-> Easy Peasy Lemon Squeezy  
+> Easy!  
 > _!lemon-o_
 
 ---
@@ -68,4 +68,4 @@ By including a starter in the dependencies of your Boot App, you are telling Spr
 
 ---- #excerpt ----
 
-Spring Beans are magic - but what's behind them and why are they called beans? 
+Spring Beans are magic - but what's behind them and why are they called beans?
