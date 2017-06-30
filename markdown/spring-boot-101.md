@@ -58,7 +58,7 @@ Now that [_configuration scanning_](http://docs.spring.io/spring-boot/docs/curre
 
 By including a starter in the dependencies of your Boot App, you are telling Spring to scan for configuration classes inside that starter, which results in the automatic creation of the **Beans** for that starter.
 
-![Initializr injection](/images/boot6.jpg)
+![Initializr injection](/images/boot7.jpg)
 
 > Easy!  
 > _!lemon-o_
