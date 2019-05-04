@@ -5,13 +5,12 @@
   "repository": "git://github.com/jldec/firstinthecloud.git",
   "main": "pub-config.js",
   "dependencies": {
-      "pub-theme-pubblog": "^1.2.2",
-      "pub-pkg-highlight": "^0.2.4"
+    "pub-theme-pubblog": "^1.2.3"
   },
   "scripts": {
     "develop": "pub",
     "generate": "pub -O",
     "static": "pub -S out"
   },
-  "license": "CC BY 4.0"
+  "license": "CC-BY-4.0"
 }

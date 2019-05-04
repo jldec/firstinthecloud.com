@@ -86,7 +86,7 @@ header a:hover, #navicon:hover { color:#777; }
 }
 
 a.permalink {
-  float:right; display:inline-block; font:normal normal normal 14px FontAwesome;
+  float:right; font:normal normal normal 14px FontAwesome;
   line-height:28px; height:28px; text-align:center; width:28px; color:#bbb;
   color: #ddd;
 }

@@ -26,7 +26,7 @@ var opts = module.exports = {
   staticPaths: [
     { path:'./images', route:'/images' },
     './README.md',
-    './LICENSE.TXT',
+    './LICENSE',
     './CNAME',
     './.nojekyll'
   ],

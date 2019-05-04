@@ -54,7 +54,7 @@ If the configuration class is included in the `META-INF/spring.factories` of a d
 
 ## What about [Spring Initializr](https://start.spring.io/) and all those starters?
 
-Now that [_configuration scanning_](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using-boot-configuration-classes) is no longer such a mystery, the role of Spring Boot Starters is easier to understand.
+Now that [_configuration scanning_](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using-boot-configuration-classes) is no longer such a mystery, the role of Spring Boot Starters is easier to understand.
 
 By including a starter in the dependencies of your Boot App, you are telling Spring to scan for configuration classes inside that starter, which results in the automatic creation of the **Beans** for that starter.
 
