@@ -796,7 +796,7 @@ var glyphMap = {
 'yoast':'2b1',
 'youtube':'167',
 'youtube-play':'16a',
-'youtube-square':'166'  
+'youtube-square':'166'
 };
 
 function sGlyph(s) {
@@ -814,10 +814,10 @@ hb.registerHelper('faIcon', function(name, xtra, frame) {
   return iconHtml(name, hb.hbp(xtra));
 });
 
-// block helper over all {name: glyph:}
+// block helper over all {name: glyph:} sorted by glyph
 hb.registerHelper('eachFa', function(frame) {
-  return u.map(glyphMap, function(glyph, name) {
-    return frame.fn({ name:name, glyph:sGlyph(glyph) });
+  return u.map(u.sortBy(u.toPairs(glyphMap), pair => pair[1]), pair => {
+    return frame.fn({ name:pair[0], glyph:sGlyph(pair[1]) });
   }).join('');
 });
 

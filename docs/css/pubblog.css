@@ -123,8 +123,9 @@ h2 a:hover { text-decoration:underline; }
 @media print {
 html, body { font-size:11px; color:#000; }
 a { color:#000; text-decoration:underline; }
-header, #navicon, #toc, #credit, .pub-button, .permalink { display:none; }
-#title { margin:0; padding:0; }
+header, #title, #navicon, #toc, #credit, .pub-button, .permalink, .date { display:none; }
 #main { margin:0; }
-#content { max-width:95%; margin:0; padding:0; }
+#content { max-width:80%; margin:0 0 0 8em; padding:0; color:#000; }
+.markdown-body, .markdown-body a { color:#000; }
+h1, h2, h3, h4 { color:#000; }
 }
