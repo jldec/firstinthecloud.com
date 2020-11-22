@@ -5,7 +5,7 @@
   "repository": "git://github.com/jldec/firstinthecloud.git",
   "main": "pub-config.js",
   "dependencies": {
-    "pub-theme-pubblog": "^1.2.6"
+    "pub-theme-pubblog": "^1.2.9"
   },
   "scripts": {
     "develop": "pub",

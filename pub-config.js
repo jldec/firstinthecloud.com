@@ -1,7 +1,7 @@
 var opts = module.exports = {
 
   docTitle: 'firstinthecloud',              // site name
-  appUrl: 'https://firstinthecloud.com/',   // site url
+  appUrl: 'https://firstinthecloud.com',   // site url
   noRobots: false,                          // crawl me
   throttleReload: '1s',
   linkNewWindow: true,

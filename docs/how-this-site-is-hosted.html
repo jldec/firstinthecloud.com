@@ -20,7 +20,8 @@
 </head>
 <body>
 
-<div data-render-layout="main-layout"><header>
+<div data-render-layout="main-layout">
+<header>
 <div id="doctitle"><h1 id="firstinthecloud"><a href="./">firstinthecloud</a></h1>
 </div>
 <div id="topmenu"><ul>
@@ -48,14 +49,15 @@
 <div id="main" onclick="">
 <div id="content">
 
-<div data-render-page="post"><span class="permalink"><a class="permalink" href="./how-this-site-is-hosted" title="Link to this post.">&#xf0c1;</a></span><span class="date">2017-06-24</span>
+<div data-render-page="/how-this-site-is-hosted">
+<span class="permalink"><a class="permalink" href="./how-this-site-is-hosted" title="Link to this post.">&#xf0c1;</a></span><span class="date">2017-06-24</span>
 
 <div >
 <div data-render-html="/how-this-site-is-hosted"><h1 id="1st-post">1st post</h1>
 <p>Welcome to <a href="https://firstinthecloud.com" target="_blank" rel="noopener">https://firstinthecloud.com</a>, a blog about software in the <span class="fa">&#xf0c2;</span>.</p>
 <h2 id="github-pages-and-pub-server"><a href="https://help.github.com/articles/what-is-github-pages/" target="_blank" rel="noopener">GitHub Pages</a> and <a href="https://github.com/jldec/pub-server" target="_blank" rel="noopener">pub-server</a></h2>
 <p>A <a href="https://github.com/jldec/firstinthecloud.com" target="_blank" rel="noopener">git repo</a> is used to manage content in markdown files. Generating HTML into the <code>/docs</code> folder in the same repo makes for an easy publishing workflow.</p>
-<ol start="undefined">
+<ol>
 <li>Write and preview locally using <code>pub</code>.</li>
 <li>When ready to publish, generate the HTML with <code>pub -O</code>.</li>
 <li><code>git commit</code> and <code>git push</code> to make the changes live.</li>
@@ -74,14 +76,16 @@
 </div>
 </div>
 
-</div>
+
+</div><!--page-->
 
 <div id="credit"><p><span class="fa">&#xf004;</span> powered by <a href="https://jldec.github.io/pub-doc/" target="_blank" rel="noopener">pub-server</a> and <a href="https://github.com/jldec/pub-theme-pubblog" target="_blank" rel="noopener">pub-theme-pubblog</a></p>
 </div>
 
 </div>
 </div>
-</div>
+
+</div><!--layout-->
 
 <script>window.pubRef = {"href":"/how-this-site-is-hosted","relPath":"."};</script>
 <script src="./js/jquery-1.12.4.min.js" ></script>
