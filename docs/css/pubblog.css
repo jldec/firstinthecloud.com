@@ -54,7 +54,7 @@ header a:hover, #navicon:hover { color:#777; }
   font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-#content pre { background-color:#fafafa; padding:1em 4px;}
+/* #content pre { background-color:#fafafa; padding:1em 4px;} */
 
 #content blockquote {
   font-size:26px;
